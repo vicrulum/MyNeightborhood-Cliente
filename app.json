@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "MyNeighborhood",
+    "slug": "MyNeighborhood",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/pueblo.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "Mobile Devices Workshop",
+    "android": {
+      "package": "com.emilevr.MyNeighborhood"
+    }
+  }
+}
