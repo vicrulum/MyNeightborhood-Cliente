@@ -91,7 +91,7 @@ export default function LoginScreen({navigation}) {
           onChangeText={(text) => setPassword(text)}
         ></Input>
                 <FilledButton
-          title={"Entrar na"}
+          title={"Entrar"}
           onPress={() => {
             SignIn();
           }}
