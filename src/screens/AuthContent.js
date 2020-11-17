@@ -257,8 +257,9 @@ export function AdminStack() {
         } screenOptions={{ gestureEnabled:false}}>
             <MainDrawer.Screen name= "Inicio" component={HomeStackScreen}/>
             <MainDrawer.Screen name= "Generar QR" component={QRStackScreen}/>
+            <MainDrawer.Screen name= "Escanear QR" component={ScanQRStack}/>
             <MainDrawer.Screen name= "Administrar Usuarios" component={AdminUsersStack}/>
-            <MainDrawer.Screen name= "Administrar Registros" component={AdminRegistStack}/>
+            {/* <MainDrawer.Screen name= "Administrar Registros" component={AdminRegistStack}/> */}
             <MainDrawer.Screen name= "Historial de visitas" component={AdminVisitsStack}/>
             <MainDrawer.Screen name= "Verificar E-mail" component={VerifyEmail}/>
             <MainDrawer.Screen name= "Cerrar Sesion" component={AuthStack}/>
@@ -295,7 +296,7 @@ export function GuardStack() {
       } screenOptions={{ gestureEnabled:false}}>
           <MainDrawer.Screen name= "Inicio" component={HomeStackScreen}/>
           <MainDrawer.Screen name= "Escanear QR" component={ScanQRStack}/>
-          <MainDrawer.Screen name= "Historial de visitas" component={AdminVisitsStack}/>
+          {/* <MainDrawer.Screen name= "Historial de visitas" component={AdminVisitsStack}/> */}
           <MainDrawer.Screen name= "Verificar E-mail" component={VerifyEmail}/>
           <MainDrawer.Screen name= "Cerrar Sesion" component={AuthStack}/>
       </MainDrawer.Navigator>
