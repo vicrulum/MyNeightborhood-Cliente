@@ -8,7 +8,9 @@ import {TextButton} from '../components/TextButton'
 import { ScrollView } from "react-native-gesture-handler";
 import QRCode from 'react-native-qrcode-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import Constants from 'expo-constants';
+import * as Sharing from 'expo-sharing';
+import * as FileSystem from 'expo-file-system';
 
 
 
@@ -108,6 +110,7 @@ export default function QRGeneration({navigation}) {
   });
   }
 
+  let qrShared = qrImage.split(",")[1]
   let base64Logo = qrImage;
     return (
       <ScrollView style={styles.defaultBackground}>
@@ -196,8 +199,24 @@ export default function QRGeneration({navigation}) {
               logoSize={300}
               logoBackgroundColor='transparent'
               />
+            <FilledButton 
+            title={"Compartir"}
+            onPress={
+              async () => {
+                try {
+                  let filename = 'share.png'; // or some other way to generate filename
+                  let filepath = `${FileSystem.documentDirectory}/${filename}`;
+                  await FileSystem.writeAsStringAsync(filepath, qrShared, { encoding: 'base64'});
+                  await Sharing.shareAsync(filepath, { mimeType: 'image/png' })
+                  console.log(qrShared)
+                } catch(e) {
+                  alert(e.message);
+                }
+             }
+            }
+            ></FilledButton>
           <FilledButton 
-            title={"Cancelar"}
+            title={"Regresar"}
             onPress={() => {
               setModalVisible(!modalVisible);
             }}
